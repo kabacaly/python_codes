@@ -1,4 +1,5 @@
-def barh_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_name, colors, annotate=True, show_legend=True):
+def barh_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_name, 
+              colors, annotate=True, show_legend=True, legend_position='lower right'):
     import matplotlib.pyplot as plt
     %matplotlib inline
     
@@ -65,13 +66,14 @@ def barh_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_n
                 fontsize=10
             )                               # positive and negative values.    
     if show_legend:
-        plt.legend(loc='lower right')
+        plt.legend(loc=legend_position)
     
     plt.show()
 
     fig.savefig(file_name)    
     
-def bar_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_name, colors, annotate=True, show_legend=True):
+def bar_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_name, 
+             colors, annotate=True, show_legend=True, legend_position='lower right'):
     import matplotlib.pyplot as plt
     %matplotlib inline
     
@@ -138,7 +140,7 @@ def bar_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_na
                 fontsize=10
             )                               # positive and negative values.    
     if show_legend:
-        plt.legend(loc='lower right')
+        plt.legend(loc=legend_position)
     
     plt.show()
 
