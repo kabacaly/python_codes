@@ -1,4 +1,4 @@
-def bar_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_name, colors, annotate=True):
+def barh_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_name, colors, annotate=True):
     import matplotlib.pyplot as plt
     %matplotlib inline
     
