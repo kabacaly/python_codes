@@ -10,7 +10,6 @@ def barh_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_n
     for g in range(len(legend)):        
         msk = (df[label_col]==legend[g])
         plt.barh(df[msk][x_col], width=df[msk][y_col], color=colors[g], label=legend[g])
-        #plt.barh(df_kadin['col'], width=df_kadin['val'], color='#c43333', label='Kadın')
 
         plt.xlabel(xlabel, fontsize=14)
         plt.ylabel(ylabel, fontsize=14)
@@ -32,7 +31,8 @@ def barh_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_n
             totals.append(i.get_width())
         total = sum(totals)
         avg = np.median(totals)
-
+        
+        #credit https://stackoverflow.com/a/48372659
         for rect in rects:
             # Get X and Y placement of label from rect.
             x_value = rect.get_width()
@@ -60,12 +60,11 @@ def barh_plot(df, xlabel, ylabel, legend, x_col, y_col, label_col, title, file_n
                 xytext=(space, 0),          # Horizontally shift label by `space`
                 textcoords="offset points", # Interpret `xytext` as offset in points
                 va='center',                # Vertically center label
-                ha=ha,                      # Horizontally align label differently for
+                ha=ha,                      # Horizontally align label differently for positive and negative values. 
                 rotation='vertical',
                 fontsize=10
-            )                               # positive and negative values.    
-
-    #fontsize : int or float or {'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large'}
+            ) 
+    
     plt.legend(loc='lower right')
     plt.show()
     
