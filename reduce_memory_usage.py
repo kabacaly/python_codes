@@ -1,3 +1,4 @@
+#credit https://www.kaggle.com/arjanso/reducing-dataframe-memory-size-by-65
 def reduce_mem_usage(props):
     start_mem_usg = props.memory_usage().sum() / 1024**2 
     print("Memory usage of properties dataframe is :",start_mem_usg," MB")
