@@ -2,7 +2,7 @@ def PrintException():
     import sys
     import linecache
     import logging
-    logging.basicConfig(format="%(asctime)s %(levelname)s: %(message)s", level=logging.ERROR, datefmt='%Y-%m-%d %I:%M:%S')
+    logging.basicConfig(format="%(asctime)s %(levelname)s: %(message)s", level=logging.ERROR, datefmt='%Y-%m-%d %H:%M:%S')
     exc_type, exc_obj, tb = sys.exc_info()
     f = tb.tb_frame
     lineno = tb.tb_lineno
